@@ -1,5 +1,7 @@
 # Skylark Drones — Decision Log
 
+> **Implementation note:** This decision log reflects the final prototype submitted for the Skylark Drones technical assignment. The application was tested using the supplied dataset imported into two Monday.com boards and deployed through Streamlit.
+
 ## 1. Interpretation of the problem
 
 I interpreted the assignment as a **read-only executive BI agent** over two operational
@@ -27,8 +29,10 @@ mutations.
 
 ## 3. Data resilience decisions
 
-The source files contain nulls, inconsistent/masked values, mixed date completeness,
-and categorical inconsistencies. I therefore:
+The supplied dataset contains nulls, incomplete values, mixed date completeness, and categorical inconsistencies. The data was imported into separate Monday.com boards for Work Orders and Deal Funnel analysis.
+
+I therefore:
+
 - normalize date fields with coercion;
 - parse numeric/currency fields conservatively;
 - normalize sectors for grouping;
@@ -36,9 +40,7 @@ and categorical inconsistencies. I therefore:
 - calculate missingness metrics;
 - expose material caveats in the final answer.
 
-A missing value is not replaced with zero unless the metric definition explicitly makes
-that safe. In particular, missing deal value is excluded from monetary sums and called
-out.
+A missing value is not replaced with zero unless the metric definition explicitly makes that safe. In particular, missing deal value is excluded from monetary sums and called out.
 
 ## 4. Query understanding
 
@@ -90,6 +92,17 @@ controls.
 
 ## 8. Known limitation
 
-The supplied datasets contain masked identifiers and incomplete financial/date fields.
-Therefore some founder questions can only be answered as directional analysis, not as
-a complete financial ledger. The agent is designed to state that limitation explicitly.
+## 8. Known limitations
+
+The supplied dataset contains incomplete financial, probability, and date fields. Because of this, some founder questions cannot be answered as complete financial or forecasting statements.
+
+The agent therefore distinguishes between:
+
+- available calculated values;
+- incomplete or missing data;
+- operational comparisons;
+- insights that should not be treated as forecasts.
+
+For cross-board analysis, sector matching relies on the available sector labels. Where corresponding execution data is unavailable, the agent reports the limitation instead of inferring a result.
+
+The prototype is designed for the supplied assignment dataset and board scale. A production implementation would require stronger access control, historical data, monitoring, caching, and more scalable query planning.
