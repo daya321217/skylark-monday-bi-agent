@@ -8,7 +8,7 @@ The agent connects to Monday.com in read-only mode, processes data from Work Ord
 
 ---
 
-## 💡 What I Built
+##  What I Built
 
 The application is designed around the kind of questions a founder or business leader might ask, for example:
 
@@ -22,7 +22,7 @@ Instead of just displaying raw board data, the application processes it and prov
 
 ---
 
-## 🔗 Monday.com Integration
+##  Monday.com Integration
 
 The application connects to two Monday.com boards:
 
@@ -37,7 +37,7 @@ For development and testing, I also included a **Demo XLSX mode**, so the applic
 
 ---
 
-## 📊 What the Agent Can Analyse
+##  What the Agent Can Analyse
 
 ### Sales Pipeline
 
@@ -93,7 +93,7 @@ If the required information is missing, the application explicitly says so inste
 
 ---
 
-## 🧠 How the Agent Works
+##  How the Agent Works
 
 I separated the data processing from the natural-language part of the application.
 
@@ -126,7 +126,7 @@ This keeps financial calculations deterministic instead of relying on the model 
 
 ---
 
-## ⚠️ Handling Messy Business Data
+##  Handling Messy Business Data
 
 Real business data is not always complete, so data quality is included in the output.
 
@@ -144,7 +144,7 @@ For example, if a requested sector is not present as an exact label, the applica
 
 ---
 
-## 📈 Leadership Update
+##  Leadership Update
 
 The application includes a leadership-update view that brings the important numbers together.
 
@@ -164,7 +164,7 @@ The goal is to turn the underlying board data into something that can be used du
 
 ---
 
-## 🖥️ Application
+##  Application
 
 The interface provides:
 
@@ -182,7 +182,7 @@ The application was tested using the supplied dataset as well as the Monday.com 
 
 ---
 
-## 📁 Project Structure
+##  Project Structure
 
 ```text
 skylark-monday-bi-agent/
@@ -221,7 +221,7 @@ skylark-monday-bi-agent/
 
 ---
 
-## 🧪 Testing
+##  Testing
 
 Tests are included for important parts of the data-processing layer, including:
 
@@ -242,7 +242,7 @@ pytest
 
 ---
 
-## 🔐 Configuration
+##  Configuration
 
 The application uses environment variables for the Monday.com connection.
 
@@ -265,7 +265,7 @@ The actual API token and `.env` file should never be committed to GitHub.
 
 ---
 
-## 🚀 Running Locally
+##  Running Locally
 
 ### 1. Clone the repository
 
@@ -308,7 +308,7 @@ The application will open in the browser.
 
 ---
 
-## 🔒 Read-Only Design
+##  Read-Only Design
 
 The Monday.com integration is intentionally read-only.
 
@@ -333,7 +333,7 @@ This includes decisions related to data handling, analytics, missing values, and
 
 ---
 
-## 🎯 What This Project Demonstrates
+##  What This Project Demonstrates
 
 This project demonstrates practical work with:
 
@@ -352,9 +352,12 @@ The main focus was not just displaying raw board data, but turning that data int
 
 ---
 
-## 👩‍💻 Project
+##  Project
 
 **Skylark Drones — Monday.com Business Intelligence Agent**
+
+URL:
+https://skylark-monday-bi-agent-gfebsbe9suazgkehk3arpc.streamlit.app/
 
 Built as a technical assignment to demonstrate how operational and sales data from Monday.com can be transformed into structured, founder-level business insights through a simple analytics interface.
 
